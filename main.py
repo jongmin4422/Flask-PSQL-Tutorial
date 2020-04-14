@@ -37,3 +37,5 @@ def users(username):
     else:
         return user.email
 
+if __name__ == "__main__":
+    app.run()
