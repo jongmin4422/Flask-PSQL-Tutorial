@@ -16,7 +16,7 @@ class User(db.Model):
     name=db.Column(db.String,unique=True)
     email=db.Column(db.String,unique=True)
 
-db.init_app()
+db.init_app(app)
 
 @app.route("/new",method=['get','post'])
 def new():
