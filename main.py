@@ -18,7 +18,7 @@ class User(db.Model):
 
 db.init_app(app)
 
-@app.route("/new",method=['get','post'])
+@app.route("/new",methods=['get','post'])
 def new():
     if request.method=='POST':
         email=request.form['email']
