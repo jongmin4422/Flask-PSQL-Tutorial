@@ -78,7 +78,7 @@ def login():
         email_exists = db.session.query(db.exists().where(
             User.email == email)).scalar()
         if email_exists:
-            user = User.query.filter_by(email=email)
+            user = User.query.filter_by(email=email).first()
             if bcrypt.check_password_hash(user.password,password):
                 login_user(user)
                 return redirect(url_for('users'))
