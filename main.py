@@ -30,7 +30,7 @@ class User(db.Model):
     def __repr__(self):
         return '<User {}>'.format(self.name)
 
-@login_manager.user_loader()
+@login_manager.user_loader
 def load_user(id):
     return User.query.get(id)
 
