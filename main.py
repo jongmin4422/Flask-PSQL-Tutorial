@@ -58,7 +58,7 @@ def signup():
         if username_exists:
             return render_template("signup.html",error="USERNAME EXISTS")
 
-        hash_password=bcrypt.generate_password_hash(password)
+        hash_password=bcrypt.generate_password_hash(password).decode('utf-8')
 
         user = User(name=username,password=hash_password,email=email)
         db.session.add(user)
