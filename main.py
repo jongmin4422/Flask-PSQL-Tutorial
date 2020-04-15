@@ -35,7 +35,7 @@ def load_user(id):
     return User.query.get(id)
 
 
-db.init_app()
+db.init_app(app)
 
 
 
